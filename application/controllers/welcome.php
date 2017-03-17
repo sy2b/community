@@ -17,7 +17,8 @@ class Welcome extends CI_Controller {
         $this -> load -> model('user_model');
         $row = $this -> user_model -> check_username($val);
         if($row){
-            echo 'success';
+            $this -> session -> set_userdata('loginedUser', $row);
+            redirect('welcome/index');
         }else{
             echo 'fail';
         }
@@ -28,15 +29,34 @@ class Welcome extends CI_Controller {
 
 	public function login()
 	{
+
 		$this->load->view('login');
 	}
+
+	public function check_login(){
+        $username = $this -> input -> post('username');
+        $pass = $this ->input -> post('pass');
+//        echo $username . '|' . $pass;
+//        die();
+        $this -> load -> model('user_model');
+        $row = $this -> user_model -> check_login($username,$pass);
+        if($row){
+            echo 'success';
+        }
+    }
+
+
+
+
+
+
 	public function life_talk()
 	{
 		$this->load->view('life_talk');
 	}
 	public function person()
 	{
-		$int =sdsdds ;
+
 		$this->load->view('person');
 	}
 }

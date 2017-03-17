@@ -13,15 +13,15 @@
 <body>
 <div class="container">
     <section id="content">
-        <form action="">
+        <form action="welcome/check_login" method="post">
             <!--111-->
             <h1>XX小区登录入口</h1>
 <!--            hahahhvfgahahahahhh-->
             <div>
-                <input type="text" placeholder="Username" required="" id="username" />
+                <input type="text" name="username" placeholder="Username" required="" id="username" />
             </div>
             <div>
-                <input type="password" placeholder="Password" required="" id="password" />
+                <input type="password" name="pass" placeholder="Password" required="" id="password" />
             </div>
             <div>
                 <input type="submit" value="登录" />
