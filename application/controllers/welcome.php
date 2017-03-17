@@ -9,6 +9,23 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('reg');
 	}
+
+
+
+    public function check_username(){
+        $val = $this -> input -> get('val');
+        $this -> load -> model('user_model');
+        $row = $this -> user_model -> check_username($val);
+        if($row){
+            echo 'success';
+        }else{
+            echo 'fail';
+        }
+    }
+
+
+
+
 	public function login()
 	{
 		$this->load->view('login');
@@ -23,5 +40,3 @@ class Welcome extends CI_Controller {
 	}
 }
 
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
