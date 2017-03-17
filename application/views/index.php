@@ -1,3 +1,6 @@
+<?php
+$loginedUser = $this->session->userdata('loginedUser');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,42 +91,15 @@
 			<div id="interest-topic">
 				<div class="interest-topic-title">最新公示</div>
 				<ul class="interest-topic-content">
+					<?php foreach($all as $single){?>
 					<li>
-						<span>[文化]</span>
-						<a href="#">老板给20多名员工发iPhone被老婆送进精神病院</a>
-						<span>2017-3-13</span>
-						<span>来自：文化中心胡林</span>
+						<span>[<?php echo $single->type_name ?>]</span>
+						<a href="#"><?php echo $single->pro_content?></a>
+						<span><?php echo $single->date?></span>
+						<!--<span>来自：文化中心胡林</span>-->
 					</li>
-					<li>
-						<span>[文化]</span>
-						<a href="#">老板给20多名员工发iPhone被老婆送进精神病院</a>
-						<span>2017-3-13</span>
-						<span>来自：文化中心胡林</span>
-					</li>
-					<li>
-						<span>[文化]</span>
-						<a href="#">老板给20多名员工发iPhone被老婆送进精神病院</a>
-						<span>2017-3-13</span>
-						<span>来自：文化中心胡林</span>
-					</li>
-					<li>
-						<span>[文化]</span>
-						<a href="#">老板给20多名员工发iPhone被老婆送进精神病院</a>
-						<span>2017-3-13</span>
-						<span>来自：文化中心胡林</span>
-					</li>
-					<li>
-						<span>[文化]</span>
-						<a href="#">老板给20多名员工发iPhone被老婆送进精神病院</a>
-						<span>2017-3-13</span>
-						<span>来自：文化中心胡林</span>
-					</li>
-					<li>
-						<span>[文化]</span>
-						<a href="#">老板给20多名员工发iPhone被老婆送进精神病院</a>
-						<span>2017-3-13</span>
-						<span>来自：文化中心胡林</span>
-					</li>
+					<?php }?>
+
 				</ul>
 			</div>
 		</div>
@@ -144,52 +120,34 @@
 				<div id="activities-con-details">
 					<div class="selected">
 						<ul>
+							<?php foreach($rules as $rule){?>
 							<li>
-								<p><a href="">关于加强小区文明养犬的通知呢方法很简单是风还未返回恶恶回复i恶恶回复i问候大家比我粗地方不i额我发表</a></p>
-								<p>2017-3-18&nbsp;&nbsp;居民委员会</p>
+								<p><a href=""><?php echo $rule->pro_content ?></a></p>
+								<p><?php echo $rule->date ?>&nbsp;&nbsp;居民委员会</p>
 							</li>
-							<li>
-								<p><a href="">关于“我们的文化之夏”第...</a></p>
-								<p>2017-3-18&nbsp;&nbsp;居民委员会</p>
-							</li>
-							<li>
-								<p><a href="">关于“我们的文化之夏”第...</a></p>
-								<p>2017-3-18&nbsp;&nbsp;居民委员会</p>
-							</li>
+							<?php };?>
 						</ul>
 						<a href="property/index" class="read-more">+more+</a>
 					</div>
 					<div>
 						<ul>
-							<li>
-								<p><a href="">相约仲夏文化梦—2015北大...</a></p>
-								<p>2017-3-18</p>
-							</li>
-							<li>
-								<p><a href="">相约仲夏文化梦—2015北大...</a></p>
-								<p>2017-3-18</p>
-							</li>
-							<li>
-								<p><a href="">相约仲夏文化梦—2015北大...</a></p>
-								<p>2017-3-18</p>
-							</li>
+							<?php foreach($activities as $activitie){?>
+								<li>
+									<p><a href=""><?php echo $activitie->pro_content ?></a></p>
+									<p><?php echo $activitie->date ?>&nbsp;&nbsp;居民委员会</p>
+								</li>
+							<?php };?>
 						</ul>
 						<a href="property/index" class="read-more">+more+</a>
 					</div>
 					<div>
 						<ul>
-							<li>
-								<p><a href="">爱在资源，家在御湾-资源家...</a></p>
-								<p>2017-3-18</p>
-							</li>
-							<li>
-								<p><a href="">爱在资源，家在御湾-资源家...</a></p>
-								<p>2017-3-18</p>
-							</li>
-							<li>
-								<p><a href="">爱在资源，家在御湾-资源家...</a></p>
-								<p>2017-3-18</p>
-							</li>
+							<?php foreach($announces as $announce){?>
+								<li>
+									<p><a href=""><?php echo $announce->pro_content ?></a></p>
+									<p><?php echo $announce->date ?>&nbsp;&nbsp;居民委员会</p>
+								</li>
+							<?php };?>
 						</ul>
 						<a href="property/index" class="read-more">+more+</a>
 					</div>

@@ -3,26 +3,28 @@
 class Welcome extends CI_Controller {
 	public function index()
 	{
-		$this->load->view('index');
+		$loginedUser = $this -> session -> userdata('loginedUser');
+		$this -> load -> model('property_model');
+		$rules = $this -> property_model -> get_rule();
+		$activities = $this -> property_model -> get_activities();
+		$announces = $this -> property_model -> get_announce();
+		$all = $this -> property_model -> get_all();
+	/*	$nowrow = $this -> property_model -> get_nowproperty();*/
+	/*	if($row){
+			echo $row;
+		}*/
+		$this->load->view('index',array(
+				'rules' => $rules,
+				'activities' => $activities,
+				'announces' => $announces,
+				'all' => $all
+				));
 	}
 	public function reg()
 	{
 		$this->load->view('reg');
 	}
 
-
-
-    public function check_username(){
-        $val = $this -> input -> get('val');
-        $this -> load -> model('user_model');
-        $row = $this -> user_model -> check_username($val);
-        if($row){
-            $this -> session -> set_userdata('loginedUser', $row);
-            redirect('welcome/index');
-        }else{
-            echo 'fail';
-        }
-    }
 
 
 
@@ -40,10 +42,16 @@ class Welcome extends CI_Controller {
 //        die();
         $this -> load -> model('user_model');
         $row = $this -> user_model -> check_login($username,$pass);
-        if($row){
-            echo 'success';
-        }
-    }
+		if($row){
+			$this -> session -> set_userdata('loginedUser', $row);
+			redirect('welcome/index');
+		}
+	}
+	public function outlogin(){
+		$this -> session -> unset_userdata('loginedUser');
+		redirect('welcome/login');
+	}
+
 
 
 
