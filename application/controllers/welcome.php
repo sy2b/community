@@ -14,6 +14,7 @@ class Welcome extends CI_Controller {
 				'activities' => $activities,
 				'announces' => $announces,
 				'all' => $all
+//				sdsd
 				));
 	}
 	public function reg()
