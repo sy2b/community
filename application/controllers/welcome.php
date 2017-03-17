@@ -36,6 +36,7 @@ class Welcome extends CI_Controller {
 	}
 	public function person()
 	{
+		$int =sdsdds ;
 		$this->load->view('person');
 	}
 }
