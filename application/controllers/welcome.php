@@ -9,10 +9,6 @@ class Welcome extends CI_Controller {
 		$activities = $this -> property_model -> get_activities();
 		$announces = $this -> property_model -> get_announce();
 		$all = $this -> property_model -> get_all();
-	/*	$nowrow = $this -> property_model -> get_nowproperty();*/
-	/*	if($row){
-			echo $row;
-		}*/
 		$this->load->view('index',array(
 				'rules' => $rules,
 				'activities' => $activities,
@@ -24,10 +20,6 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('reg');
 	}
-
-
-
-
 
 	public function login()
 	{
