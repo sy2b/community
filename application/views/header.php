@@ -1,7 +1,7 @@
 <div id="user">
     <div class="wrapper">
         <div>
-            <a href="#" class="user-login">Hi!<?php echo $loginedUser -> name;?> 已登录</a>
+            <a href="#" class="user-login">Hi!<?php echo $loginedUser-> name;?> 已登录</a>
             <span></span>
             <a href="welcome/outlogin" class="user-logout">退出</a>
         </div>
