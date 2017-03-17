@@ -1,0 +1,240 @@
+/**********************house-rent开始************************/
+#house-rent{
+	height: 40px;
+}
+#house-rent .wrapper{
+	height: 40px;
+	/*background: #fff;*/
+}
+#house-rent-nav{
+	height: 40px;
+	line-height: 40px;
+	color: #676767;
+}
+#house-rent-nav a{
+	color: #676767;
+	font-size: 12px;
+}
+#house-img{
+	height: 360px;
+	background: url(../img/index2.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+/**********************house-rent结束************************/
+
+/**********************house-rent-info开始************************/
+#house-rent-info{
+	overflow: hidden;
+	background: #fff;
+}
+
+#house-rent-info .house-rent-tabcontrols{
+	width: 768px;
+	height: 1000px;
+	background: #f4f4f4;
+	float: left;
+	margin-top: 20px;
+}
+#house-rent-info .house-rent-tabcontrols p{
+	width: 100%;
+	height: 70px;
+}
+#house-rent-info .house-rent-tabcontrols span{
+	width: 200px;
+	height: 70px;
+	display: inline-block;
+	text-align: center;
+	line-height: 70px;
+	font-size: 20px; 
+	color: #aaa;
+}
+#house-rent-info .house-rent-tabcontrols input{
+	width: 300px;
+	height: 40px;
+	border: 1px solid #999;
+	outline: none;
+	text-indent: 10px;
+}
+
+#house-rent-info  .house-rent-tabcontrols .house-intro{
+	width: 100%;
+	height: 200px;
+}
+#house-rent-info  .house-rent-tabcontrols .house-intro span{
+	float: left;
+	margin-top: 65px;
+
+}
+
+#house-rent-info .house-intro textarea{
+	width: 300px;
+	height: 200px;
+	display: inline-block;
+	float: left;
+	text-indent: 10px;
+	outline: none;
+}
+#house-rent-info .house-announce{
+	margin-top: 40px;
+	text-align: center;
+}
+#house-rent-info .house-announce input{
+	width: 140px;
+	height: 40px;
+	background: #b1cb3d;
+	font-size: 16px;
+	color: #fff;
+	border-radius: 5px;
+	border-color: #b1cb3d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#house-rent-info .house-rent-service{
+	width: 320px;
+	height: 954px;
+	/*background: #f00;*/
+	float: right;
+	padding: 20px 0;
+}
+#house-rent-info .house-announce{
+	width: 320px;
+	height: 250px;
+	background: #f4f4f4;
+}
+#house-rent-info .house-announce p{
+	width: 320px;
+	height: 23px;
+	font-size: 20px;
+	color: #00b4dc;
+	padding: 20px 0;
+	text-align: center;
+}
+#house-rent-info .house-announce a{
+	width: 120px;
+	height: 42px;
+	display: block;
+	background: #b1cb3d;
+	color: #fff;
+	text-align: center;
+	line-height: 42px;
+	margin-left: 100px;
+	margin-top: 10px;
+}
+#house-rent-info .culture-center{
+	width: 320px;
+	height: 155px;
+	margin-top: 10px;
+}
+#house-rent-info .culture-center img{
+	width: 320px;
+	height: 155px;
+}
+#house-rent-info .district-life{
+	width: 320px;
+	height: 310px;
+	/*background: #ccc;*/
+	margin-top: 20px;
+}
+#house-rent-info .district-life .district-life-title{
+	width: 321px;
+	height: 42px;
+	background: #00b4dc;
+	color: #fff;
+	font-size: 22px;
+	line-height: 42px;
+	text-indent: 10px;
+}
+#district-life-service{
+	width: 320px;
+	height: 340px;
+	position: relative;
+
+}
+#district-life-service ul{
+	width: 320px;
+	height: 320px;
+	border-right: 1px solid #dfdfdf;
+	display: none;
+}
+#district-life-service ul.selected{
+	display: block;
+}
+#district-life-service li{
+	width: 159px;
+	height: 159px;
+	/*background: #f00;*/
+	float: left;
+	border-left: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf;
+}
+#district-life-service li a{
+	width: 160px;
+	height: 160px;
+	display: block;
+	text-align: center;
+}
+#district-life-service li img{
+	width: 60px;
+	height: 60px;
+	margin-top: 40px;
+}
+#district-life-service li p{
+	width: 160px;
+	height: 20px;
+	font-size: 14px;
+	color: #00b4dc;
+	text-align: center;
+	line-height: 20px;
+}
+#district-life-service .district-life-tab{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+#district-life-service .district-life-tab span{
+	width: 20px;
+	height: 5px;
+	float: left;
+	background: #b8b8b8;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#district-life-service .district-life-tab span.selected{
+	background: #00b4dc;
+}
+
+/**********************house-rent-info结束************************/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

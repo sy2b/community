@@ -1,0 +1,313 @@
+/************************carousel开始**********************/
+#carousel{
+	height: 380px;
+	background: #fff;
+}
+#carousel .wrapper{
+	height: 380px;
+	
+}
+#carousel-container{
+	width: 868px;
+	height: 360px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+#carousel-imgs{
+	width: 3472px;
+	height: 360px;
+	position: absolute;
+}
+#carousel-imgs img{
+	width: 868px;
+	height: 360px;
+	float: left;
+}
+#carousel-tab{
+	height: 10px;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	margin-left: -36px;
+}
+#carousel-tab li{
+	width: 10px;
+	height: 10px;
+	background: #333;
+	float: left;
+	margin-right: 8px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+#carousel-tab .selected{
+	background: #fff;
+}
+#banner{
+	width: 342px;
+	height: 380px;
+	/*background: #f00;*/
+	float: left;
+}
+#banner p{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 10px;
+	font-size: 20px;
+	color: #00b4dc;
+}
+#district-life-service{
+	width: 320px;
+	height: 340px;
+	position: relative;
+	margin-left: 11px;
+}
+#district-life-service ul{
+	width: 320px;
+	height: 320px;
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	display: none;
+}
+#district-life-service ul.selected{
+	display: block;
+}
+#district-life-service li{
+	width: 159px;
+	height: 159px;
+	/*background: #f00;*/
+	float: left;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+#district-life-service li a{
+	width: 160px;
+	height: 160px;
+	display: block;
+	text-align: center;
+}
+#district-life-service li img{
+	width: 60px;
+	height: 60px;
+	margin-top: 40px;
+}
+#district-life-service li p{
+	width: 160px;
+	height: 20px;
+	font-size: 14px;
+	color: #00b4dc;
+	text-align: center;
+	line-height: 20px;
+}
+#district-life-service .district-life-tab{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+#district-life-service .district-life-tab span{
+	width: 20px;
+	height: 5px;
+	float: left;
+	background: #b8b8b8;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#district-life-service .district-life-tab span.selected{
+	background: #00b4dc;
+}
+
+
+
+
+
+/************************carousel结束**********************/
+
+/************************interest开始**********************/
+#interest{
+	height: 254px;
+}
+#interest .wrapper{
+	height: 254px;
+	background: #fff;	
+}
+#interest-circle{
+	width: 605px;
+	height: 254px;
+	/*background: #f00;*/
+	float: left;
+}
+#interest-circle .interest-circle-title{
+	width: 605px;
+	height: 58px;
+} 
+#interest-circle .interest-circle-title h3{
+	width: 100px;
+	height: 58px;
+	text-align: center;
+	line-height: 58px;
+	color: #333;
+}
+#interest-circle .interest-circle-content{
+	width: 578px;
+	height: 196px;
+	
+	border-right: 1px solid #ccc;
+}
+#interest-circle .interest-circle-content img{
+	width: 100%;
+	height: 100%;
+}
+
+
+#interest-topic{
+	width: 605px;
+	height: 254px;
+	
+	float: right;
+}
+#interest-topic .interest-topic-title{
+	width: 605px;
+	height: 58px;
+	line-height: 58px;
+}
+#interest-topic .interest-topic-content{
+	width: 605px;
+	height: 196px;
+}
+#interest-topic .interest-topic-content li{
+	width: 605px;
+	height: 30px;
+	line-height: 30px;
+}
+#interest-topic .interest-topic-content a{
+	width: 270px;
+	height: 20px;
+	display: block;
+	font-size: 14px;
+	float: left;
+	line-height: 20px;
+	margin-top: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #333;
+}
+#interest-topic .interest-topic-content span{
+	font-size: 12px;
+	float: left;
+	margin: 0 20px;
+}
+/************************interest结束**********************/
+
+/************************interest结束**********************/
+#activities{
+	height: 330px;
+}
+#activities .wrapper{
+	height: 330px;
+}
+#activities-title{
+	height: 45px;
+}
+#activities-title #activities-tab{
+	width: 600px;
+	height: 45px;
+	float: left;
+}
+#activities-tab li{
+	width: 64px;
+	height: 35px;
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 5px;
+}
+#activities-tab li.selected{
+	border-bottom: 2px solid #00b4dc;
+}
+#activities-tab li a{
+	color: #333;
+}
+#activities-tab li a.selected{
+	color: #00b4dc;
+}
+
+#activities-title #culture-center{
+	width: 600px;
+	height: 45px; 
+	float: right;
+}
+#culture-center h3{
+	width: 600px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 7px;
+}
+#activities-content{
+	height: 285px;
+	
+}
+#activities-con-details{
+	width: 600px;
+	height: 285px;
+	background: #fff;
+	float: left;
+}
+#activities-con-details div{
+	display: none;
+}
+#activities-con-details div.selected{
+	display: block; 
+}
+#activities-con-details li{
+	width: 570px;
+	height: 60px;
+	padding-left:20px;
+	margin-top: 15px;
+	border-bottom: 1px dotted #ccc;
+}
+#activities-con-details li a{
+	width:90%;
+	height: 20px;
+	display: block;
+	font-size: 14px;
+	color: #676767;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#activities-con-details li p{
+	font-size: 12px;
+	margin: 5px 0;
+}
+#activities-con-details .read-more{
+	width: 60px;
+	height: 30px;
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	background: #ccc;
+	border-radius: 5px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+
+#culture-details{
+	width: 600px;
+	height: 285px;
+	float: right;
+}
+#culture-details img{
+	width: 600px;
+	height: 285px;
+}
+
+
+
+
+/************************interest结束**********************/

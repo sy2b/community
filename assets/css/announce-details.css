@@ -1,0 +1,32 @@
+#announce-details{
+	height: 500px;
+	background: #fff;
+
+}
+#announce-details .wrapper{
+	height: 500px;
+	overflow: hidden;
+}
+#announce-details h3{
+	width: 100%;
+	height: 30px;
+	color: #ccc;
+	text-align: center;
+	line-height: 30px;
+	margin: 20px 0;
+} 
+#announce-details .time{
+	width: 100%;
+	height: 30px;
+	border-top: 1px dotted #ccc;
+	border-bottom: 1px dotted #ccc;
+	color: #ddd;
+	text-align: center;
+	line-height: 30px;
+}
+#announce-details .content{
+	width: 100%;
+	color: #bbb;
+	font-size: 14px;
+	margin-top: 20px;
+}

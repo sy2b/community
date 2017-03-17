@@ -1,0 +1,358 @@
+/**********************house-rent开始************************/
+
+#house-rent{
+	height: 40px;
+}
+#house-rent .wrapper{
+	height: 40px;
+	/*background: #fff;*/
+}
+#house-rent-nav{
+	height: 40px;
+	line-height: 40px;
+	color: #676767;
+}
+#house-rent-nav a{
+	color: #676767;
+	font-size: 12px;
+}
+#house-rent-content{
+	height: 360px;
+	background-image: url("../img/index2.jpg");
+	background-size: 100% 100%;
+	margin: 10px 0;
+}
+
+/**********************house-rent结束************************/
+
+/**********************house-rent-info开始************************/
+#house-rent-info{
+	overflow: hidden;
+	background: #fff;
+}
+
+#house-rent-info .house-rent-tabcontrols{
+	float: left;
+	position: relative;
+}
+#house-rent-info .house-rent-tab{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#house-rent-info .house-rent-tab span{
+	width: 80px;
+	height: 30px;
+	float: left;
+	background: #dfdfdf;
+	margin-right: 10px;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+
+#house-rent-info .house-rent-tab span.active{
+	background: #00b4dc;
+}
+
+
+
+#house-rent-info .house-rent-details{
+	width: 768px;
+	margin-top: 30px;
+	border-top: 2px solid #dfdfdf;
+}
+#house-rent-info .house-rent-details ul{
+	display: none;
+}
+#house-rent-info .house-rent-details ul.active{
+	display: block;
+}
+
+#house-rent-info .house-rent-details li{
+	width: 768px;
+	height: 180px;
+	padding: 20px 0;
+	border-bottom: 1px solid #dfdfdf; 
+}
+#house-rent-info  .house-img{
+	width: 288px;
+	height: 180px;
+	float: left;
+	position: relative;
+}
+#house-rent-info  .house-img img{
+	width: 288px;
+	height: 180px;
+}
+#house-rent-info  .house-img span{
+	width: 52px;
+	height: 26px;
+	display: block;
+	background: #00b4dc;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	line-height: 26px;
+	position: absolute;
+	top: 0;
+}
+
+#house-rent-info .house-introduce{
+	width: 463px;
+	height: 160px;
+	float: right;
+}
+#house-rent-info .house-title{
+	width: 316px;
+	height: 25px;
+	padding: 10px 0;
+}
+#house-rent-info .house-title a{
+	font-size: 18px;
+	color: #676767;
+}
+#house-rent-info .house-type{
+	width: 316px;
+	height: 20px;
+}
+#house-rent-info .house-type span{
+	width: 50px;
+	height: 18px;
+	float: left;
+	color: #00b4dc;
+	border: 1px solid #00b4dc;
+	text-align: center;
+	line-height: 18px;
+	font-size: 14px;
+	margin-right: 10px;
+}
+#house-rent-info .house-intro .p1{
+	width: 316px;
+	height: 88px;
+	font-size: 12px;
+	float: left;
+	margin-top: 8px;
+}
+#house-rent-info .house-intro .p2{
+	width: 104px;
+	float: right;
+	line-height: 35px;
+}
+#house-rent-info .house-intro .p2 p{
+	color: #989898;
+	font-size: 12px;
+}
+#house-rent-info .house-intro span{
+	font-size: 12px;
+}
+#house-rent-info .house-intro .house-price{
+	width: 70px;
+	height: 35px;
+	display: inline-block;
+	color: #00b4dc;
+	text-align: center;
+	line-height: 35px;
+	font-size: 30px;
+}
+
+#house-rent-info .hire-info h3{
+	width: 100%;
+	height: 60px;
+	color: #ccc;
+	text-align: center;
+	line-height: 60px;
+} 
+#house-rent-info .hire-info p{
+	width: 100%;
+	padding: 10px 0;
+	color: #ccc;
+}
+#house-rent-info .hire-info .span1{
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	display: inline-block;
+	background: #00b4dc;
+	text-align: center;
+	line-height: 30px;
+}
+#house-rent-info .hire-info .span2{
+	color: #f00;
+}
+
+#house-rent-info .repairs h3{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	color: #ccc;
+}
+
+#house-rent-info .repairs .price{
+	width: 80px;
+	height: 30px;
+	background: #00b4dc;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px 0;
+}
+
+#house-rent-info .repairs .repairs-details{
+	width: 100%;
+	color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#house-rent-info .house-rent-service{
+	width: 320px;
+	height: 954px;
+	/*background: #f00;*/
+	float: right;
+	padding: 20px 0;
+}
+#house-rent-info .house-announce{
+	width: 320px;
+	height: 250px;
+	background: #f4f4f4;
+}
+#house-rent-info .house-announce p{
+	width: 320px;
+	height: 23px;
+	font-size: 20px;
+	color: #00b4dc;
+	padding: 20px 0;
+	text-align: center;
+}
+#house-rent-info .house-announce a{
+	width: 120px;
+	height: 42px;
+	display: block;
+	background: #b1cb3d;
+	color: #fff;
+	text-align: center;
+	line-height: 42px;
+	margin-left: 100px;
+	margin-top: 10px;
+}
+#house-rent-info .culture-center{
+	width: 320px;
+	height: 155px;
+	margin-top: 10px;
+}
+#house-rent-info .culture-center img{
+	width: 320px;
+	height: 155px;
+}
+#house-rent-info .district-life{
+	width: 320px;
+	height: 310px;
+	/*background: #ccc;*/
+	margin-top: 20px;
+}
+#house-rent-info .district-life .district-life-title{
+	width: 321px;
+	height: 42px;
+	background: #00b4dc;
+	color: #fff;
+	font-size: 22px;
+	line-height: 42px;
+	text-indent: 10px;
+}
+#district-life-service{
+	width: 320px;
+	height: 340px;
+	position: relative;
+
+}
+#district-life-service ul{
+	width: 320px;
+	height: 320px;
+	border-right: 1px solid #dfdfdf;
+	display: none;
+}
+#district-life-service ul.selected{
+	display: block;
+}
+#district-life-service li{
+	width: 159px;
+	height: 159px;
+	/*background: #f00;*/
+	float: left;
+	border-left: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf;
+}
+#district-life-service li a{
+	width: 160px;
+	height: 160px;
+	display: block;
+	text-align: center;
+}
+#district-life-service li img{
+	width: 60px;
+	height: 60px;
+	margin-top: 40px;
+}
+#district-life-service li p{
+	width: 160px;
+	height: 20px;
+	font-size: 14px;
+	color: #00b4dc;
+	text-align: center;
+	line-height: 20px;
+}
+#district-life-service .district-life-tab{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -25px;
+}
+#district-life-service .district-life-tab span{
+	width: 20px;
+	height: 5px;
+	float: left;
+	background: #b8b8b8;
+	margin-right: 10px;
+	cursor: pointer;
+}
+#district-life-service .district-life-tab span.selected{
+	background: #00b4dc;
+}
+
+/**********************house-rent-info结束************************/ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
