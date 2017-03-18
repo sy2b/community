@@ -3,9 +3,33 @@
 class Property extends CI_Controller {
     /*物业在线首页*/
     public function index(){
-        /*$loginedUser = $this -> session -> userdata('loginedUser');*/
-        $this->load->view('property');
+        $loginedUser = $this -> session -> userdata('loginedUser');
+        $this -> load -> model('property_model');
+        $rules = $this -> property_model -> get_rule_all();
+        $activities = $this -> property_model -> get_activities_all();
+        $announces = $this -> property_model -> get_announce_all();
+        $suggests = $this -> property_model ->get_suggest_all();
+
+        $this->load->view('property',array(
+            'rules' => $rules,
+            'activities' => $activities,
+            'announces' => $announces,
+            'suggests' => $suggests
+        ));
     }
+    public function save_suggest(){
+        $uid = $this -> session -> userdata('loginedUser')->user_id;
+        $suggest = $this -> input -> post('suggest');
+        $this -> load -> model('property_model');
+        $result = $this -> property_model -> save_suggest($suggest,$uid);
+        if($result){
+            redirect('property/property');
+        }else{
+            echo "0";
+        }
+    }
+
+
 
     /*小区实景*/
     public function scenery()

@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +26,9 @@
 				<h3>发布建议</h3>
 				
 				<div class="publish-form">
-					<form action="">
+					<form action="property/save_suggest" method="post">
 						<p>
-							<textarea name=""></textarea>
+							<textarea name="suggest"></textarea>
 						</p>
 						<p>
 							<input type="submit" class="submit" value="发表建议">

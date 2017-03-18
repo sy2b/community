@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,48 +33,55 @@
 			</div>
 			<div class="property-details">
 				<ul class="active rule">
+					<?php foreach($rules as $rule){?>
 					<li>
-						<h3><a href="property/rule_details">[豪第坊]紧急停水通知</a></h3>
-						<p class="content">   尊敬的各位业主：        您好！        接水厂紧急通知：由于扬州江阳西路自来水管道施工，下午1点至下午5点新集镇将停水，请各位业主做好储水准备，安排好自己的生活，如有疑问请致电豪第坊物业服务处。        豪第坊物业服务处</p>
+						<h3><a href="property/rule_details">[豪第坊]<?php echo $rule->pro_title?></a></h3>
+						<p class="content"><?php echo $rule->pro_content?></p>
 						<p class="time">
-							<span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-							<span>李四</span>
+							<span><?php echo $rule->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
+							<span><?php echo $rule->name?></span>
 						</p>
 					</li>
+					<?php };?>
 				</ul>
 
 				<ul class="activities">
+					<?php foreach($activities as $activity){?>
 					<li>
-						<h3><a href="property/activities_details">[星座国际]消防培训通知</a></h3>
-						<p class="content">  各位业主        你们好！        3月14日（下星期二）下午三点，消防大队将在本大厦举办消防知识讲座，欢迎广大业主参加。（孙凌云） 星座物业服务处2017年3月10日</p>
+						<h3><a href="property/activities_details">[星座国际]<?php echo $activity->pro_title?></a></h3>
+						<p class="content"><?php echo $activity->pro_content?></p>
 						<p class="time">
-							<span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-							<span>李四</span>
+							<span><?php echo $activity->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
+							<span><?php echo $activity->name?></span>
 						</p>
 					</li>
+					<?php };?>
 				</ul>
 
 				<ul class="announce">
+					<?php foreach($announces as $announce){?>
 					<li>
-						<h3><a href="property/announce_details">[公元国际]车辆停放友情提醒</a></h3>
-						<p class="content"> 尊敬的门市房业主、租户：        您们好！        由于目前大厦车辆较多，门市房店面门口出现了车辆乱停乱放现象，已经影响到大厦的消防通道畅通。为了大厦所有办公人员的生命、财产安全，严禁车辆停留在消防通道上，请将车辆停在规定区域内</p>
+						<h3><a href="property/announce_details">[公元国际]<?php echo $announce->pro_title?></a></h3>
+						<p class="content"><?php echo $announce->pro_content?></p>
 						<p class="time">
-							<span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-							<span>李四</span>
+							<span><?php echo $announce->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
+							<span><?php echo $announce->name?></span>
 						</p>
 					</li>
+					<?php };?>
 				</ul>
 
 				<ul class="suggestion">
+					<?php foreach($suggests as $suggest){?>
 					<li>
-						<h3>有关小区正确停车</h3>
-						<p class="content"> 尊敬的门市房业主、租户：        您们好！        由于目前大厦车辆较多，门市房店面门和覅哦骚饭后i啊释迦佛i时代反击哦i是和参数看出你卡数据才能把你从拉萨的农村口出现了车辆乱停乱放现象，已经影响到大厦的消防通道畅通。为了大厦所有办公人员的生命、财产安全，严禁车辆停留在消防通道上，请将车辆停在规定区域内</p>
+						<p class="content"> &nbsp;&nbsp;<?php echo $suggest->sug_content?></p>
 						<p class="time">
-							<span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-							<span>李四</span>
+							<span><?php echo $suggest->date?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
+							<span><?php echo $suggest->name?></span>
 						</p>
 						<p class="response">居民委员会张三&nbsp;&nbsp;<span>回复了</span>&nbsp;&nbsp;李四&nbsp;&nbsp;<span>还能发哦苏附近哪家哦i啊师傅捏区分</span></p>
 					</li>
+					<?php }?>
 				</ul>
 			</div>
 

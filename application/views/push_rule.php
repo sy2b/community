@@ -1,8 +1,9 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>物业在线</title>
+    <title>发布规定</title>
     <base href="<?php echo site_url();?>">
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/push_rule.css">
@@ -23,13 +24,14 @@
     <div class="wrapper">
         <div class="property-online"></div>
         <div class="property-rule">
-            <form id="rule" action="" method="post" >
+            <form id="rule" action="power/push_rule" method="post" >
             <fieldset>
+                <input type="hidden" value="规定" name="type">
                 <legend>新规定</legend>
                 <label for="title">标题:</label>
-                <input id="title" type="text" class="title" placeholder="请在此填写标题"><br>
+                <input id="title" type="text" class="title" placeholder="请在此填写标题" name="title"><br>
                 <label for="content">内容:</label>
-                <textarea id="content" rows="2" cols="100" class="content" placeholder="请在此填写规定内容"></textarea><br>
+                <textarea id="content" rows="2" cols="100" class="content" placeholder="请在此填写规定内容" name="content"></textarea><br>
                 <input type="submit" value="发布" class="push">
                 <input type="reset" value="重置" class="reset">
 
