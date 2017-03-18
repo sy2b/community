@@ -17,6 +17,19 @@ class Property extends CI_Controller {
             'suggests' => $suggests
         ));
     }
+    public function save_suggest(){
+        $uid = $this -> session -> userdata('loginedUser')->user_id;
+        $suggest = $this -> input -> post('suggest');
+        $this -> load -> model('property_model');
+        $result = $this -> property_model -> save_suggest($suggest,$uid);
+        if($result){
+            redirect('property/property');
+        }else{
+            echo "0";
+        }
+    }
+
+
 
     /*小区实景*/
     public function scenery()

@@ -1,3 +1,5 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,99 +34,62 @@
             </div>
             <div class="property-details">
                 <ul class="active rule">
-                    <li>
-                        <h3><a href="#">[豪第坊]紧急停水通知</a></h3><a class="del">删除此规定</a>
-                        <p class="content">   尊敬的各位业主：        您好！        接水厂紧急通知：由于扬州江阳西路自来水管道施工，下午1点至下午5点新集镇将停水，请各位业主做好储水准备，安排好自己的生活，如有疑问请致电豪第坊物业服务处。        豪第坊物业服务处</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
-
-                    <li>
-                        <h3><a href="#">[豪第坊]紧急停水通知</a></h3><a class="del">删除此规定</a>
-                        <p class="content">   尊敬的各位业主：        您好！        接水厂紧急通知：由于扬州江阳西路自来水管道施工，下午1点至下午5点新集镇将停水，请各位业主做好储水准备，安排好自己的生活，如有疑问请致电豪第坊物业服务处。        豪第坊物业服务处</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
-
-                    <li>
-                        <h3><a href="#">[豪第坊]紧急停水通知</a></h3><a class="del">删除此规定</a>
-                        <p class="content">   尊敬的各位业主：        您好！        接水厂紧急通知：由于扬州江阳西路自来水管道施工，下午1点至下午5点新集镇将停水，请各位业主做好储水准备，安排好自己的生活，如有疑问请致电豪第坊物业服务处。        豪第坊物业服务处</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
+                    <?php foreach($rules as $rule){?>
+                        <li>
+                            <h3><a href="property/rule_details">[豪第坊]<?php echo $rule->pro_title?></a></h3><a class="del" href="power/delete_rule?id=<?php echo $rule->pro_id?>">删除此规定</a>
+                            <p class="content"><?php echo $rule->pro_content?></p>
+                            <p class="time">
+                                <span><?php echo $rule->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
+                                <span><?php echo $rule->name?></span>
+                            </p>
+                        </li>
+                    <?php };?>
                 </ul>
                 <ul class="activities">
-                    <li>
-                        <h3><a href="#">[星座国际]消防培训通知</a></h3><a class="del">取消此活动</a>
-                        <p class="content">  各位业主        你们好！        3月14日（下星期二）下午三点，消防大队将在本大厦举办消防知识讲座，欢迎广大业主参加。（孙凌云） 星座物业服务处2017年3月10日</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
-
-                    <li>
-                        <h3><a href="#">[星座国际]消防培训通知</a></h3><a class="del">取消此活动</a>
-                        <p class="content">  各位业主        你们好！        3月14日（下星期二）下午三点，消防大队将在本大厦举办消防知识讲座，欢迎广大业主参加。（孙凌云） 星座物业服务处2017年3月10日</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
+                    <?php foreach($activities as $activity){?>
+                        <li>
+                            <h3><a href="property/activities_details">[星座国际]<?php echo $activity->pro_title?></a></h3><a class="del" href="power/delete_activity?id=<?php echo $activity->pro_id?>">取消此活动</a>
+                            <p class="content"><?php echo $activity->pro_content?></p>
+                            <p class="time">
+                                <span><?php echo $activity->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
+                                <span><?php echo $activity->name?></span>
+                            </p>
+                        </li>
+                    <?php };?>
                 </ul>
                 <ul class="announce">
-                    <li>
-                        <h3><a href="#">[公元国际]车辆停放友情提醒</a></h3><a class="del">删除此公告</a>
-                        <p class="content"> 尊敬的门市房业主、租户：        您们好！        由于目前大厦车辆较多，门市房店面门口出现了车辆乱停乱放现象，已经影响到大厦的消防通道畅通。为了大厦所有办公人员的生命、财产安全，严禁车辆停留在消防通道上，请将车辆停在规定区域内</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
-                    <li>
-                        <h3><a href="#">[公元国际]车辆停放友情提醒</a></h3><a class="del">删除此公告</a>
-                        <p class="content"> 尊敬的门市房业主、租户：        您们好！        由于目前大厦车辆较多，门市房店面门口出现了车辆乱停乱放现象，已经影响到大厦的消防通道畅通。为了大厦所有办公人员的生命、财产安全，严禁车辆停留在消防通道上，请将车辆停在规定区域内</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
-
-                    <li>
-                        <h3><a href="#">[公元国际]车辆停放友情提醒</a></h3><a class="del">删除此公告</a>
-                        <p class="content"> 尊敬的门市房业主、租户：        您们好！        由于目前大厦车辆较多，门市房店面门口出现了车辆乱停乱放现象，已经影响到大厦的消防通道畅通。为了大厦所有办公人员的生命、财产安全，严禁车辆停留在消防通道上，请将车辆停在规定区域内</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
-                            <span>李四</span>
-                        </p>
-                    </li>
+                    <?php foreach($announces as $announce){?>
+                        <li>
+                            <h3><a href="property/announce_details">[公元国际]<?php echo $announce->pro_title?></a></h3><a class="del" href="power/delete_announce?id=<?php echo $announce->pro_id?>">取消此活动</a>
+                            <p class="content"><?php echo $announce->pro_content?></p>
+                            <p class="time">
+                                <span><?php echo $announce->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
+                                <span><?php echo $announce->name?></span>
+                            </p>
+                        </li>
+                    <?php };?>
                 </ul>
 
 
-                <ul class="">
-                    <li>
-                        <p class="content"> 我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;发送人：&nbsp;&nbsp;
-                            <span>李四</span><a class="req">已回复</a>
-                        </p>
-
-                    </li>
-
-                    <li>
-                        <p class="content"> 我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊我家狗丢了啊啊啊啊啊啊啊啊啊啊啊</p>
-                        <p class="time">
-                            <span>2017-3-13 10:22:22</span>&nbsp;&nbsp;发送人：&nbsp;&nbsp;
-                            <span>李四</span><a class="noreq">回复</a>
-                        </p>
-
-                    </li>
+                <ul class="suggest">
+                    <?php foreach($suggests as $suggest){?>
+                        <li>
+                            <p class="content"> &nbsp;&nbsp;<?php echo $suggest->sug_content?></p>
+                            <p class="time">
+                                <span><?php echo $suggest->date?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
+                                <span><?php echo $suggest->name?></span><a class="noreq">未回复</a>
+                            </p>
+                        </li>
+                    <?php }?>
+                    <?php foreach($suggests as $suggest){?>
+                        <li>
+                            <p class="content"> &nbsp;&nbsp;<?php echo $suggest->sug_content?></p>
+                            <p class="time">
+                                <span><?php echo $suggest->date?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
+                                <span><?php echo $suggest->name?></span><a class="req">已回复</a>
+                            </p>
+                        </li>
+                    <?php }?>
 
                 </ul>
             </div>
@@ -136,8 +101,8 @@
             <div class="house-announce">
                 <p>我有信息要发布</p>
                 <a href="power/rule">+发布规定</a>
-                <a href="">+发布活动</a>
-                <a href="">+发布公告</a>
+                <a href="power/activity">+发布活动</a>
+                <a href="power/announcement">+发布公告</a>
             </div>
             <div class="culture-center">
                 <img src="assets/img/culture.jpg" alt="">

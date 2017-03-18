@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,13 +24,14 @@
     <div class="wrapper">
         <div class="property-online"></div>
         <div class="property-rule">
-            <form id="rule" action="" method="post" >
+            <form id="rule" action="power/push_activity" method="post" >
                 <fieldset>
+                    <input type="hidden" value="活动" name="type">
                     <legend>新活动</legend>
                     <label for="title">标题:</label>
-                    <input id="title" type="text" class="title" placeholder="请在此填写标题"><br>
+                    <input id="title" type="text" class="title" placeholder="请在此填写标题" name="title"><br>
                     <label for="content">内容:</label>
-                    <textarea id="content" rows="2" cols="100" class="content" placeholder="请在此填写活动内容"></textarea><br>
+                    <textarea id="content" rows="2" cols="100" class="content" placeholder="请在此填写活动内容" name="content"></textarea><br>
                     <input type="submit" value="发布" class="push">
                     <input type="reset" value="重置" class="reset">
 
