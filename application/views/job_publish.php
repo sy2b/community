@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,26 +23,26 @@
 	<div id="house-rent-info">
 		<div class="wrapper">
 			<div class="house-rent-tabcontrols">
-				<form action="">
+				<form action="service/add_jobs" method="post">
 					<p class="house-name">
 						<span>兼职名称</span>
-						<input type="text" placeholder="请输入兼职名称">
+						<input type="text" placeholder="请输入兼职名称" name="job_type">
 					</p>
 					
 					<p class="house-price">
-						<span>工资</span><input type="text" placeholder="2200元/月">
+						<span>工资</span><input type="text" name="job_salary" placeholder="2200元/月">
 					</p>
 					<p>
 						<span>联系人</span>
-						<input type="text" placeholder="刘女士">
+						<input type="text" name="job_contactor" placeholder="刘女士">
 					</p>
 					<p>
 						<span>联系电话</span>
-						<input type="text" placeholder="18790905423">
+						<input type="text" name="contact_tel" placeholder="18790905423">
 					</p>
 					<p class="house-intro">
 						<span>工作简述</span>
-						<textarea name="" ></textarea>
+						<textarea name="job_introduce" ></textarea>
 					</p>
 					<p class="house-announce">
 						<input type="submit" value="+发布兼职信息+">

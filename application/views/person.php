@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,23 +27,23 @@
 				<div class="person-img">
 					<img src="assets/img/person.png" alt="">
 				</div>
-				<form action="">
+				<form action="welcome/update_user" method="post">
 					<p>
-						<span>用户名</span>
-						<input type="text" placeholder="请修改用户名">
+						<span>昵称</span>
+						<input type="text" placeholder="请修改昵称" name="name" value="<?php echo $loginedUser -> name;?>">
 					</p>
 
 					<p>
 						<span>密码</span>
-						<input type="text" placeholder="请修改密码">
+						<input type="password" placeholder="请修改密码" name="pass" value="<?php echo $loginedUser -> password;?>">
 					</p>
 					<p>
 						<span>住址</span>
-						<input type="text" placeholder="请修改住址">
+						<input type="text" placeholder="请修改住址" name="address" value="<?php echo $loginedUser -> address;?>">
 					</p>
 					<p>
 						<span>联系方式</span>
-						<input type="text" placeholder="请修改联系方式">
+						<input type="text" placeholder="请修改联系方式" name="telephone" value="<?php echo $loginedUser -> telephone;?>">
 					</p>
 					<p class="submit">
 						<input type="submit" value="提交修改">

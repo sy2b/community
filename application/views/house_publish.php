@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +45,12 @@
 					</p>
 					<p class="house-price">
 						<span>价格</span><input type="text" placeholder="2200元/月">
+					</p>
+					<p>
+						<span>联系人</span><input type="text">
+					</p>
+					<p>
+						<span>联系电话</span><input type="text">
 					</p>
 					<p class="house-intro">
 						<span>房屋综述</span>

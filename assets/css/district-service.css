@@ -105,7 +105,7 @@
 	float: right;
 }
 #house-rent-info .house-title{
-	width: 316px;
+	width: 100%;
 	height: 25px;
 	padding: 10px 0;
 }
@@ -114,7 +114,7 @@
 	color: #676767;
 }
 #house-rent-info .house-type{
-	width: 316px;
+	width: 100%;
 	height: 20px;
 }
 #house-rent-info .house-type span{
@@ -128,34 +128,40 @@
 	font-size: 14px;
 	margin-right: 10px;
 }
+#house-rent-info .house-type .contact{
+	width: 300px;
+	color: #676767;
+	border: 0;
+}
+/*修改*/
+
 #house-rent-info .house-intro .p1{
-	width: 316px;
-	height: 88px;
+	width: 100%;
+	height: 20px;
 	font-size: 12px;
-	float: left;
-	margin-top: 8px;
+	margin-top: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 #house-rent-info .house-intro .p2{
-	width: 104px;
-	float: right;
-	line-height: 35px;
-}
-#house-rent-info .house-intro .p2 p{
-	color: #989898;
-	font-size: 12px;
-}
-#house-rent-info .house-intro span{
-	font-size: 12px;
-}
-#house-rent-info .house-intro .house-price{
-	width: 70px;
-	height: 35px;
-	display: inline-block;
+	width: 100%;
+	height: 30px;
+	margin-top: 10px;
 	color: #00b4dc;
-	text-align: center;
-	line-height: 35px;
-	font-size: 30px;
+	line-height: 30px;
 }
+
+#house-rent-info .house-intro .p3{
+	width: 100%;
+	height: 20px;
+	margin-top: 10px;
+	color: #676767;
+}
+/*修改*/
+
+
+
 
 #house-rent-info .hire-info h3{
 	width: 100%;
@@ -192,11 +198,12 @@
 #house-rent-info .repairs .price{
 	width: 80px;
 	height: 30px;
+	display: inline-block;
 	background: #00b4dc;
 	color: #fff;
 	text-align: center;
 	line-height: 30px;
-	margin: 10px 0;
+	margin: 10px 10px;
 }
 
 #house-rent-info .repairs .repairs-details{

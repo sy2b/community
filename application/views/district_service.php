@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,122 +31,76 @@
 				</div>
 				<div class="house-rent-details">
 					<ul class="active">
-						<li>
-							<div class="house-img">
-								<img src="assets/img/house-rent/1.jpg" alt="">
-								<span>租赁中</span>
-							</div>
-							<div class="house-introduce">
-								<div class="house-title">
-									<a href="#">123平米的房子，现在仅租2200！</a>
-								</div>
-								<div class="house-type">
-									<span>整租</span>
-									<span>两居室</span>
-								</div>
-								<div class="house-intro">
-									<p class="p1">
-		                               租金：2200元/月 (押二付一)户型： 2室2厅1卫 - 整租 - 123.00 ㎡概况： 东南朝向 - 普通住宅 - 精装修楼层： 10/11小区： 江滨花园七期 - 该小区租房约51条  位置： 东莞 - 万江 - 万江中心配置： 床 / 家.....
-		                            </p>
-		                            <p class="p2">
-		                            	 <span class="house-price">2200</span>
-		                            	 <span>元/月</span>
-		                            	 <span>2017-3-13发布</span>
-		                            </p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="house-img">
-								<img src="assets/img/house-rent/1.jpg" alt="">
-								<span>租赁中</span>
-							</div>
-							<div class="house-introduce">
-								<div class="house-title">
-									<a href="#">123平米的房子，现在仅租2200！</a>
-								</div>
-								<div class="house-type">
-									<span>整租</span>
-									<span>两居室</span>
-								</div>
-								<div class="house-intro">
-									<p class="p1">
-		                               租金：2200元/月 (押二付一)户型： 2室2厅1卫 - 整租 - 123.00 ㎡概况： 东南朝向 - 普通住宅 - 精装修楼层： 10/11小区： 江滨花园七期 - 该小区租房约51条  位置： 东莞 - 万江 - 万江中心配置： 床 / 家.....
-		                            </p>
-		                            <p class="p2">
-		                            	 <span class="house-price">2200</span>
-		                            	 <span>元/月</span>
-		                            	 <span>2017-3-13发布</span>
-		                            </p>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="house-img">
-								<img src="assets/img/house-rent/1.jpg" alt="">
-								<span>租赁中</span>
-							</div>
-							<div class="house-introduce">
-								<div class="house-title">
-									<a href="#">123平米的房子，现在仅租2200！</a>
-								</div>
-								<div class="house-type">
-									<span>整租</span>
-									<span>两居室</span>
-								</div>
-								<div class="house-intro">
-									<p class="p1">
-		                               租金：2200元/月 (押二付一)户型： 2室2厅1卫 - 整租 - 123.00 ㎡概况： 东南朝向 - 普通住宅 - 精装修楼层： 10/11小区： 江滨花园七期 - 该小区租房约51条  位置： 东莞 - 万江 - 万江中心配置： 床 / 家.....
-		                            </p>
-		                            <p class="p2">
-		                            	 <span class="house-price">2200</span>
-		                            	 <span>元/月</span>
-		                            	 <span>2017-3-13发布</span>
-		                            </p>
-								</div>
-							</div>
-						</li>
+						<?php
+							foreach($houses as $house){
+						?>
+								<li>
+									<div class="house-img">
+										<img src="assets/img/house-rent/1.jpg" alt="">
+										<span><?php echo $house -> rent_sell;?>中</span>
+									</div>
+									<div class="house-introduce">
+										<div class="house-title">
+											<a href="service/house_details?house_id=<?php echo $house->house_id;?>"><?php echo $house -> house_title;?></a>
+										</div>
+										<div class="house-type">
+											<span><?php echo $house -> rent_sell;?></span>
+											<span><?php echo $house -> house_size;?></span>
+											<span class="contact">联系人：<?php echo $house->contact_name;?><?php echo $house->contact_tel;?></span>
+										</div>
+										<div class="house-intro">
+											<p class="p1"><?php echo $house -> house_introduce;?></p>
+											<p class="p2">
+												<span>价位</span>
+												<span><?php echo $house -> price;?></span>
+											</p>
+											<p class="p3"><?php echo $house -> post_date;?></p>
+										</div>
+									</div>
+								</li>
+						<?php
+							}
+						?>
 					</ul>
 					<ul class="hire-info">
-						<li>
-							<h3>
-								<span>月嫂</span>
-								&nbsp;|&nbsp;
-								<span>刘先生15467889034</span>
-							</h3>
-							<p>
-								<span class="span1">工作经验不限</span>&nbsp;/&nbsp;
-								<span>2017-3-18</span>
-								&nbsp;/&nbsp;
-								<span class="span2">￥4500-6000</span>
-							</p>
-							<p>五年以上月膄实际工作经验，有月膄证，月薪试用期3600，转正4500元，每周休1天，在婴儿体验店工作，环境好，有提成。25到48岁。</p>
-						</li>
-						<li>
-							<h3>
-								<span>钟点工</span>
-								&nbsp;|&nbsp;
-								<span>王女士15467889034</span>
-							</h3>
-							<p>
-								<span class="span1">工作经验不限</span>&nbsp;/&nbsp;
-								<span>2017-3-18</span>
-								&nbsp;/&nbsp;
-								<span class="span2">￥免费</span>
-							</p>
-							<p>五年以上月膄实际工作经验，有月膄证，月薪试用期3600，转正4500元，每周休1天，在婴儿体验店工作，环境好，有提成。25到48岁。</p>
-						</li>
+						<?php
+							foreach($jobs as $job){
+						?>
+							<li>
+								<h3>
+									<span><?php echo $job -> job_type;?></span>
+									&nbsp;|&nbsp;
+									<span><?php echo $job -> contact_name;?><?php echo $job -> content_tel;?></span>
+								</h3>
+								<p>
+									<span class="span1">工作经验不限</span>&nbsp;/&nbsp;
+									<span><?php echo $job -> date;?></span>
+									&nbsp;/&nbsp;
+									<span class="span2">￥<?php echo $job -> price;?></span>
+								</p>
+								<p><?php echo $job -> job_introduce;?></p>
+							</li>
+						<?php
+							}
+						?>
+
+
 					</ul>
 					<ul class="repairs">
-						<li>
-							<h3>
-								<span>电梯坏了</span>
-								&nbsp;||&nbsp;
-								<span>联系人：王女士15467889034</span>
-							</h3>
-							<p class="price">价格面议</p>&nbsp;&nbsp;
-							<p class="repairs-details">(2017-2-23)电梯的日常维护保养费用在物业管理费里按每平方米收取,修理费用则一般先由物业垫付,再通过使用维修基金还给物业公司!。</p>
-						</li>
+						<?php
+							foreach($repairs as $repair){
+						?>
+							<li>
+								<h3>
+									<span>联系人：<?php echo $repair->contact_name;?><?php echo $repair->content_tel;?></span>
+								</h3>
+								<p><span class="price">价格面议</span><span><?php echo $repair->price;?></span></p>&nbsp;&nbsp;
+								<p class="repairs-details">(<?php echo $repair->date;?>)<?php echo $repair->job_introduce;?></p>
+							</li>
+						<?php
+							}
+						?>
+
 					</ul>
 				</div>
 				

@@ -14,7 +14,6 @@ class Welcome extends CI_Controller {
 				'activities' => $activities,
 				'announces' => $announces,
 				'all' => $all
-//				sdsd
 				));
 	}
 	public function reg()
@@ -22,17 +21,42 @@ class Welcome extends CI_Controller {
 		$this->load->view('reg');
 	}
 
+	//验证用户名是否已存在
+	public function check_username(){
+	    $val = $this -> input -> get('val');
+        $this -> load -> model('user_model');
+        $row = $this -> user_model -> check_username($val);
+        if($row){
+            echo 'success';
+        }else{
+            echo 'fail';
+        }
+    }
+
+
+    //验证注册
+	public function check_reg(){
+	    $username = $this -> input -> post('username');
+        $name = $this -> input -> post('name');
+        $password = $this -> input -> post('password');
+        $password2 = $this -> input -> post('password2');
+        $address = $this -> input -> post('address');
+        $telephone = $this -> input -> post('telephone');
+        $this -> load -> model('user_model');
+        $row = $this -> user_model -> save_user($username,$name,$password,$address,$telephone);
+        if($row > 0){
+            redirect('welcome/login');
+        }
+    }
+
 	public function login()
 	{
-
 		$this->load->view('login');
 	}
-
+    //验证登录
 	public function check_login(){
         $username = $this -> input -> post('username');
         $pass = $this ->input -> post('pass');
-//        echo $username . '|' . $pass;
-//        die();
         $this -> load -> model('user_model');
         $row = $this -> user_model -> check_login($username,$pass);
 		if($row){
@@ -51,14 +75,36 @@ class Welcome extends CI_Controller {
 
 
 
-	public function life_talk()
-	{
+	public function life_talk(){
 		$this->load->view('life_talk');
 	}
-	public function person()
-	{
 
+
+
+	public function person(){
 		$this->load->view('person');
 	}
+
+	public function update_user(){
+	    $loginedUser = $this -> session -> userdata('loginedUser');
+        $name = $this -> input -> post('name');
+        $pass = $this -> input -> post('pass');
+        $address = $this -> input -> post('address');
+        $telephone = $this -> input -> post('telephone');
+        $this -> load -> model('user_model');
+        $row = $this -> user_model -> update_user($name,$pass,$address,$telephone,$loginedUser -> user_id);
+        if($row > 0){
+            $user = $this -> session -> userdata('loginedUser');
+            $user -> name = $name;
+            $user -> password = $pass;
+            $user -> address = $address;
+            $user-> telephone = $telephone;
+            $this -> session -> set_userdata('loginedUser', $user);
+            echo '<script>alert("修改信息成功")</script>';
+            redirect('welcome/person');
+        }
+    }
+
+
 }
 
