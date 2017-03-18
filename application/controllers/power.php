@@ -23,7 +23,8 @@ class Power extends CI_Controller {
         $this -> load -> model('property_model');
         $row = $this -> property_model -> delete_rule($rule_id);
         if($row){
-            redirect('power/index');
+            /*redirect('power/index');*/
+            echo "1";
         }else{
             echo "0";
         }
@@ -34,7 +35,8 @@ class Power extends CI_Controller {
         $this -> load -> model('property_model');
         $row = $this -> property_model -> delete_rule($activity_id);
         if($row){
-            redirect('power/index');
+            /*redirect('power/index');*/
+            echo "1";
         }else{
             echo "0";
         }
@@ -45,7 +47,8 @@ class Power extends CI_Controller {
         $this -> load -> model('property_model');
         $row = $this -> property_model -> delete_rule($announce_id);
         if($row){
-            redirect('power/index');
+            /*redirect('power/index');*/
+            echo "1";
         }else{
             echo "0";
         }

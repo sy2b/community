@@ -36,7 +36,7 @@
                 <ul class="active rule">
                     <?php foreach($rules as $rule){?>
                         <li>
-                            <h3><a href="property/rule_details">[豪第坊]<?php echo $rule->pro_title?></a></h3><a class="del" href="power/delete_rule?id=<?php echo $rule->pro_id?>">删除此规定</a>
+                            <h3><a href="property/rule_details">[豪第坊]<?php echo $rule->pro_title?></a></h3><a href="javascript:;" class="del del_rule" value="<?php echo $rule->pro_id?>">删除此规定</a><!--<a class="del" href="power/delete_rule?id=<?php /*echo $rule->pro_id*/?>">删除此规定</a>-->
                             <p class="content"><?php echo $rule->pro_content?></p>
                             <p class="time">
                                 <span><?php echo $rule->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
@@ -48,7 +48,7 @@
                 <ul class="activities">
                     <?php foreach($activities as $activity){?>
                         <li>
-                            <h3><a href="property/activities_details">[星座国际]<?php echo $activity->pro_title?></a></h3><a class="del" href="power/delete_activity?id=<?php echo $activity->pro_id?>">取消此活动</a>
+                            <h3><a href="property/activities_details">[星座国际]<?php echo $activity->pro_title?></a></h3><a href="javascript:;" class="del del_activity" value="<?php echo $activity->pro_id?>">删除此活动</a>
                             <p class="content"><?php echo $activity->pro_content?></p>
                             <p class="time">
                                 <span><?php echo $activity->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
@@ -60,7 +60,7 @@
                 <ul class="announce">
                     <?php foreach($announces as $announce){?>
                         <li>
-                            <h3><a href="property/announce_details">[公元国际]<?php echo $announce->pro_title?></a></h3><a class="del" href="power/delete_announce?id=<?php echo $announce->pro_id?>">取消此活动</a>
+                            <h3><a href="property/announce_details">[公元国际]<?php echo $announce->pro_title?></a></h3><a href="javascript:;" class="del del_announce" value="<?php echo $announce->pro_id?>">删除此公告</a>
                             <p class="content"><?php echo $announce->pro_content?></p>
                             <p class="time">
                                 <span><?php echo $announce->date?></span>&nbsp;&nbsp;物业委员会&nbsp;&nbsp;
@@ -81,15 +81,15 @@
                             </p>
                         </li>
                     <?php }?>
-                    <?php foreach($suggests as $suggest){?>
+          <!--          <?php /*foreach($suggests as $suggest){*/?>
                         <li>
-                            <p class="content"> &nbsp;&nbsp;<?php echo $suggest->sug_content?></p>
+                            <p class="content"> &nbsp;&nbsp;<?php /*echo $suggest->sug_content*/?></p>
                             <p class="time">
-                                <span><?php echo $suggest->date?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
-                                <span><?php echo $suggest->name?></span><a class="req">已回复</a>
+                                <span><?php /*echo $suggest->date*/?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
+                                <span><?php /*echo $suggest->name*/?></span><a class="req">已回复</a>
                             </p>
                         </li>
-                    <?php }?>
+                    --><?php /*}*/?>
 
                 </ul>
             </div>
@@ -124,5 +124,65 @@
 <script src="assets/js/header.js"></script>
 <script src="assets/js/district-service.js"></script>
 <script src="assets/js/property.js"></script>
+<script>
+
+
+    $('.del_rule').on('click',function(){
+        var str =$(this).attr('value');
+        var _that = $(this);
+        /*console.log(a);*/
+        if(confirm("确认删除？")){
+            $.get('power/delete_rule',{
+                'id': str
+            },function(data){
+                if(data=='1'){
+                    _that.parent().fadeOut(1000,function(){
+                        $(this).remove();
+                    });
+                }else {
+                    alert('删除数百');
+                }
+            },'text')
+        }
+    })
+
+    $('.del_activity').on('click',function(){
+        var str =$(this).attr('value');
+        var _that = $(this);
+        /*console.log(a);*/
+        if(confirm("确认删除？")){
+            $.get('power/delete_activity',{
+                'id': str
+            },function(data){
+                if(data=='1'){
+                    _that.parent().fadeOut(1000,function(){
+                        $(this).remove();
+                    });
+                }else {
+                    alert('删除数百');
+                }
+            },'text')
+        }
+    });
+
+    $('.del_announce').on('click',function(){
+        var str =$(this).attr('value');
+        var _that = $(this);
+        /*console.log(a);*/
+        if(confirm("确认删除？")){
+            $.get('power/delete_announce',{
+                'id': str
+            },function(data){
+                if(data=='1'){
+                    _that.parent().fadeOut(1000,function(){
+                        $(this).remove();
+                    });
+                }else {
+                    alert('删除数百');
+                }
+            },'text')
+        }
+    })
+</script>
 </body>
 </html>
