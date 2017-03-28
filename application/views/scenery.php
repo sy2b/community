@@ -1,3 +1,4 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser')?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

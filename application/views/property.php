@@ -79,7 +79,7 @@
 							<span><?php echo $suggest->date?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
 							<span><?php echo $suggest->name?></span>
 						</p>
-						<p class="response">居民委员会张三&nbsp;&nbsp;<span>回复了</span>&nbsp;&nbsp;李四&nbsp;&nbsp;<span>还能发哦苏附近哪家哦i啊师傅捏区分</span></p>
+						<p class="response">居民委员会<?php echo $suggest->res_name?>&nbsp;&nbsp;<span>回复了</span>&nbsp;&nbsp;<?php echo $suggest->name?>&nbsp;&nbsp;<span><?php echo $suggest->res_content?></span></p>
 					</li>
 					<?php }?>
 				</ul>

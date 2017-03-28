@@ -30,7 +30,7 @@ class Property_model extends CI_Model {
         return $this->db->query($sql)->result();
     }
     public function get_suggest_all(){
-        $sql = "select t_suggest.*,t_user.name from t_suggest,t_user where t_suggest.user_id=t_user.user_id order by date DESC";
+        $sql = "select t_suggest.*,t_user.name,t_response.res_name,t_response.res_content from t_suggest,t_user,t_response where t_suggest.user_id=t_user.user_id and t_suggest.suggest_id=t_response.suggest_id order by date DESC";
         return $this->db->query($sql)->result();
     }
     public  function save_suggest($suggest,$uid){

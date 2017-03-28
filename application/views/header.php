@@ -27,7 +27,9 @@
             <li><a href="service/index">小区服务</a></li>
             <li><a href="welcome/life_talk">生活论坛</a></li>
             <li><a href="welcome/person">个人中心</a></li>
+            <?php if($loginedUser->user_type==1){?>
             <li><a href="power/index">物业委员会权限</a></li>
+            <?php }?>
         </ul>
     </div>
 </div>

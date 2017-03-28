@@ -91,6 +91,21 @@ class Power extends CI_Controller {
         }
     }
 
+    public function res_suggest(){
+        $this -> load -> view('res_suggest');
+    }
+    public function  save_res(){
+        $suggest_id = $this -> input -> post('sid');
+        $resname = $this -> session -> userdata('loginedUser')->name;
+        $content = $this -> input -> post('content');
+        $state = 1;
+        $this -> load -> model('suggest_model');
+        $row1 = $this -> suggest_model -> save_response($suggest_id,$resname,$content);
+        $row2 = $this -> suggest_model -> update_state($suggest_id,$state);
+        redirect('power/index');
+
+    }
+
 
     public function rule()
     {

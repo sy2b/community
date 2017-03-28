@@ -16,7 +16,7 @@
         <div id="property-title-nav">
             <a href="#">首页</a>
             &nbsp;|&nbsp;
-            <a href="#">物业在线</a>
+            <a href="#">物业管理委员会权限</a>
         </div>
     </div>
 </div>
@@ -77,19 +77,11 @@
                             <p class="content"> &nbsp;&nbsp;<?php echo $suggest->sug_content?></p>
                             <p class="time">
                                 <span><?php echo $suggest->date?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
-                                <span><?php echo $suggest->name?></span><a class="noreq">未回复</a>
+                                <span><?php echo $suggest->name?></span><a class="noreq" href="power/res_suggest?id=<?php echo $suggest->suggest_id?>">未回复</a>
                             </p>
                         </li>
                     <?php }?>
-          <!--          <?php /*foreach($suggests as $suggest){*/?>
-                        <li>
-                            <p class="content"> &nbsp;&nbsp;<?php /*echo $suggest->sug_content*/?></p>
-                            <p class="time">
-                                <span><?php /*echo $suggest->date*/?></span>&nbsp;&nbsp;居民&nbsp;&nbsp;
-                                <span><?php /*echo $suggest->name*/?></span><a class="req">已回复</a>
-                            </p>
-                        </li>
-                    --><?php /*}*/?>
+
 
                 </ul>
             </div>
@@ -130,7 +122,6 @@
     $('.del_rule').on('click',function(){
         var str =$(this).attr('value');
         var _that = $(this);
-        /*console.log(a);*/
         if(confirm("确认删除？")){
             $.get('power/delete_rule',{
                 'id': str
@@ -149,7 +140,6 @@
     $('.del_activity').on('click',function(){
         var str =$(this).attr('value');
         var _that = $(this);
-        /*console.log(a);*/
         if(confirm("确认删除？")){
             $.get('power/delete_activity',{
                 'id': str
@@ -168,7 +158,6 @@
     $('.del_announce').on('click',function(){
         var str =$(this).attr('value');
         var _that = $(this);
-        /*console.log(a);*/
         if(confirm("确认删除？")){
             $.get('power/delete_announce',{
                 'id': str

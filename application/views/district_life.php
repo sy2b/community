@@ -6,7 +6,7 @@
                     <img src="assets/img/service/icon-district.png" alt="">
                     <p>社区实景</p>
                 </a></li>
-            <li><a href="#">
+            <li><a href="property/index">
                     <img src="assets/img/service/dongtai.png" alt="">
                     <p>动态通知</p>
                 </a></li>
@@ -14,7 +14,7 @@
                     <img src="assets/img/service/fee.png" alt="">
                     <p>生活缴费</p>
                 </a></li>
-            <li><a href="#">
+            <li><a href="service/repair_publish">
                     <img src="assets/img/service/repairs.png" alt="">
                     <p>在线报修</p>
                 </a></li>

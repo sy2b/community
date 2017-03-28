@@ -34,6 +34,7 @@ class Service extends CI_Controller {
         $this -> load -> model('job_model');
 
 
+
     }
 
     public function house_details(){
