@@ -18,8 +18,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
-    background: url("../img/login-bg.jpg") no-repeat 0 0;
-    color: #000;
+    background: url("../img/login-bg.jpg") no-repeat;
+    -webkit-webkit-background-size: cover;
+    -moz-webkit-background-size: cover;
+    -ms-webkit-background-size: cover;
+    -o-webkit-background-size: cover;
+    background-size: cover;    color: #000;
     font: 14px Arial;
     margin: 0 auto;
     padding: 0;

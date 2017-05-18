@@ -14,13 +14,14 @@ class User_model extends CI_Model {
         )) -> row();
     }
 
-    public function save_user($username,$name,$password,$address,$telephone){
+    public function save_user($username,$name,$password,$address,$telephone,$user_type){
         $this -> db -> insert('t_user', array(
             'user_name' => $username,
             'name' => $name,
             'password' => $password,
             'address' => $address,
-            'telephone' => $telephone
+            'telephone' => $telephone,
+            'user_type' => $user_type
         ));
         return $this -> db -> affected_rows();
     }

@@ -255,7 +255,9 @@
 	height: 285px;
 	background: #fff;
 	float: left;
+	position: relative;
 }
+
 #activities-con-details div{
 	display: none;
 }
@@ -292,9 +294,9 @@
 	color: #fff;
 	background: #ccc;
 	border-radius: 5px;
-	float: right;
-	margin-right: 10px;
-	margin-top: 10px;
+	position: absolute;
+	bottom:	10px;
+	right: 10px;
 }
 
 #culture-details{

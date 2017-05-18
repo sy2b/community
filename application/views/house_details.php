@@ -27,7 +27,7 @@
             <h3>房屋详情</h3>
             <div class="house-content">
                 <div class="house-img">
-
+                    <img src="<?php echo $house -> house_img;?>" alt="">
                 </div>
                 <div class="house-details">
                     <p class="house-title"><?php echo $house -> house_title;?></p>
@@ -40,7 +40,8 @@
                         <span><?php echo $house -> price;?></span>
                     </p>
                     <p class="content"><?php echo $house -> house_introduce;?></p>
-                    <p class="contact"><?php echo $house->contact_name;?><?php echo $house->contact_tel;?>&nbsp;&nbsp;发布于&nbsp;&nbsp;<?php echo $house -> post_date;?></p>
+                    <p class="contact"><?php echo $house -> name;?>&nbsp;&nbsp;发布于&nbsp;&nbsp;<?php echo $house -> post_date;?></p>
+                    <p class="contact-way"><?php echo $house -> contact_name;?>&nbsp;&nbsp;<?php echo $house -> contact_tel;?></p>
                 </div>
             </div>
 

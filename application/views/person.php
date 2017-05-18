@@ -13,9 +13,9 @@
 	<div id="house-rent">
 		<div class="wrapper">
 			<div id="house-rent-nav">
-				<a href="#">首页</a>
+				<a href="welcome/index">首页</a>
 				&nbsp;|&nbsp;
-				<a href="#">个人中心</a>
+				<a href="welcome/person">个人中心</a>
 			</div>
 		</div>
 	</div>
@@ -27,51 +27,112 @@
 				<div class="person-img">
 					<img src="assets/img/person.png" alt="">
 				</div>
-				<form action="welcome/update_user" method="post">
-					<p>
-						<span>昵称</span>
-						<input type="text" placeholder="请修改昵称" name="name" value="<?php echo $loginedUser -> name;?>">
-					</p>
+				<?php
+					if($loginedUser){
+				?>
+					<form action="" id="submit-form">
+							<p>
+								<span>昵称</span>
+								<input type="text" placeholder="请修改昵称" name="name" value="<?php echo $loginedUser -> name;?>">
+							</p>
 
-					<p>
-						<span>密码</span>
-						<input type="password" placeholder="请修改密码" name="pass" value="<?php echo $loginedUser -> password;?>">
-					</p>
-					<p>
-						<span>住址</span>
-						<input type="text" placeholder="请修改住址" name="address" value="<?php echo $loginedUser -> address;?>">
-					</p>
-					<p>
-						<span>联系方式</span>
-						<input type="text" placeholder="请修改联系方式" name="telephone" value="<?php echo $loginedUser -> telephone;?>">
-					</p>
-					<p class="submit">
-						<input type="submit" value="提交修改">
-					</p>
-					
-				</form>
+							<p>
+								<span>密码</span>
+								<input type="password" placeholder="请修改密码" name="pass" value="<?php echo $loginedUser -> password;?>">
+							</p>
+							<p>
+								<span>住址</span>
+								<input type="text" placeholder="请修改住址" name="address" value="<?php echo $loginedUser -> address;?>">
+							</p>
+							<p>
+								<span>联系方式</span>
+								<input type="text" placeholder="请修改联系方式" name="telephone" value="<?php echo $loginedUser -> telephone;?>">
+							</p>
+							<p class="submit">
+								<input type="submit" value="提交修改">
+							</p>
+
+						</form>
+				<?php
+					}else{
+				?>
+					<form action="" id="submit-form">
+							<p>
+								<span>昵称</span>
+								<input type="text" placeholder="请修改昵称" name="name" value="">
+							</p>
+
+							<p>
+								<span>密码</span>
+								<input type="password" placeholder="请修改密码" name="pass" value="">
+							</p>
+							<p>
+								<span>住址</span>
+								<input type="text" placeholder="请修改住址" name="address" value="">
+							</p>
+							<p>
+								<span>联系方式</span>
+								<input type="text" placeholder="请修改联系方式" name="telephone" value="">
+							</p>
+							<p class="submit">
+								<input type="submit" value="提交修改">
+							</p>
+
+						</form>
+				<?php
+					}
+				?>
 				
 				
 			</div>
-			
-
 			<div class="house-rent-service">
 				<?php include "publish.php"?>
 				<?php include "district_life.php"?>
 			</div>
 		</div>
 	</div>
-
-	<div id="footer">
-		<p id="footer-link">
-			友情链接:
-			<a href="#">方正集团</a>
-			<a href="#">北大资源</a>
-		</p>
-		<p id="footer-copyright">版权所有：北大资源集团商业有限公司版权所有 Copyright@2013 | 京ICP备13022849号 | 京ICP证130321号 | 京公网安备11010802014221号 | 京卫网审【2014】第0105号</p>
-	</div>
+	<?php include 'footer.php';?>
 	<script src="assets/js/jquery-1.12.4.js"></script>
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/district-service.js"></script>
+	<script>
+		$(function(){
+			$('#submit-form').on('submit', function(){
+				var $name = $('[name="name"]').val();
+				var $pass = $('[name="pass"]').val();
+				var $address = $('[name="address"]').val();
+				var $telephone = $('[name="telephone"]').val();
+				console.log($name);
+				$.get('welcome/update_user', {
+					name : $name,
+					pass : $pass,
+					address : $address,
+					telephone : $telephone
+				},function(data){
+					if(data == 'success'){
+						alert('修改信息成功！！！');
+						location.href = 'welcome/person';
+					}else if(data == 'fail'){
+						alert('还未修改信息！！！');
+					}
+				}, 'text');
+
+
+
+				return false;
+			});
+		});
+
+
+
+
+
+
+
+
+
+
+
+	</script>
 </body>
 </html>

@@ -38,7 +38,7 @@ $loginedUser = $this->session->userdata('loginedUser');
 								<img src="assets/img/service/icon-district.png" alt="">
 								<p>社区实景</p>
 							</a></li>
-							<li><a href="#">
+							<li><a href="property/index">
 								<img src="assets/img/service/dongtai.png" alt="">
 								<p>动态通知</p>
 							</a></li>
@@ -46,7 +46,7 @@ $loginedUser = $this->session->userdata('loginedUser');
 								<img src="assets/img/service/fee.png" alt="">
 								<p>生活缴费</p>
 							</a></li>
-							<li><a href="#">
+							<li><a href="service/index">
 								<img src="assets/img/service/repairs.png" alt="">
 								<p>在线报修</p>
 							</a></li>
@@ -56,7 +56,7 @@ $loginedUser = $this->session->userdata('loginedUser');
 								<img src="assets/img/service/service.png" alt="">
 								<p>贴心服务</p>
 							</a></li>
-							<li><a href="#">
+							<li><a href="welcome/life_talk">
 								<img src="assets/img/service/talk.png" alt="">
 								<p>津津乐道</p>
 							</a></li>
@@ -64,7 +64,7 @@ $loginedUser = $this->session->userdata('loginedUser');
 								<img src="assets/img/service/help.png" alt="">
 								<p>互助</p>
 							</a></li>
-							<li><a href="#">
+							<li><a href="property/suggest_res_no">
 								<img src="assets/img/service/suggestion.png" alt="">
 								<p>投诉建议</p>
 							</a></li>
@@ -94,7 +94,7 @@ $loginedUser = $this->session->userdata('loginedUser');
 					<?php foreach($all as $single){?>
 					<li>
 						<span>[<?php echo $single->type_name ?>]</span>
-						<a href="#"><?php echo $single->pro_content?></a>
+						<a href="property/details/<?php echo $single -> pro_id;?>"><?php echo $single->pro_content?></a>
 						<span><?php echo $single->date?></span>
 						<!--<span>来自：文化中心胡林</span>-->
 					</li>
@@ -122,34 +122,34 @@ $loginedUser = $this->session->userdata('loginedUser');
 						<ul>
 							<?php foreach($rules as $rule){?>
 							<li>
-								<p><a href=""><?php echo $rule->pro_content ?></a></p>
+								<p><a href="property/details/<?php echo $rule->pro_id;?>"><?php echo $rule->pro_content ?></a></p>
 								<p><?php echo $rule->date ?>&nbsp;&nbsp;居民委员会</p>
 							</li>
 							<?php };?>
 						</ul>
-						<a href="property/index" class="read-more">+more+</a>
+						<a href="property/index?property=规定" class="read-more">+more+</a>
 					</div>
 					<div>
 						<ul>
 							<?php foreach($activities as $activitie){?>
 								<li>
-									<p><a href=""><?php echo $activitie->pro_content ?></a></p>
+									<p><a href="property/details/<?php echo $activitie->pro_id;?>"><?php echo $activitie->pro_content ?></a></p>
 									<p><?php echo $activitie->date ?>&nbsp;&nbsp;居民委员会</p>
 								</li>
 							<?php };?>
 						</ul>
-						<a href="property/index" class="read-more">+more+</a>
+						<a href="property/index?property=活动" class="read-more">+more+</a>
 					</div>
 					<div>
 						<ul>
 							<?php foreach($announces as $announce){?>
 								<li>
-									<p><a href=""><?php echo $announce->pro_content ?></a></p>
+									<p><a href="property/details/<?php echo $announce->pro_id;?>"><?php echo $announce->pro_content ?></a></p>
 									<p><?php echo $announce->date ?>&nbsp;&nbsp;居民委员会</p>
 								</li>
 							<?php };?>
 						</ul>
-						<a href="property/index" class="read-more">+more+</a>
+						<a href="property/index?property=公告" class="read-more">+more+</a>
 					</div>
 
 				</div>
@@ -159,14 +159,7 @@ $loginedUser = $this->session->userdata('loginedUser');
 			</div>
 		</div>
 	</div>
-	<div id="footer">
-		<p id="footer-link">
-			友情链接:
-			<a href="#">方正集团</a>
-			<a href="#">北大资源</a>
-		</p>
-		<p id="footer-copyright">版权所有：北大资源集团商业有限公司版权所有 Copyright@2013 | 京ICP备13022849号 | 京ICP证130321号 | 京公网安备11010802014221号 | 京卫网审【2014】第0105号</p>
-	</div>
+	<?php include 'footer.php';?>
 	<script src="assets/js/jquery-1.12.4.js"></script>
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/index.js"></script>

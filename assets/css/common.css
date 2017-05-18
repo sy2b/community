@@ -125,12 +125,7 @@ body{
 	height: 43px;
 	margin-right: 30px;
 }
-#nav-tab .nav-tab-first a{
-	text-align: center;
-	line-height: 43px;
-	color: #fff;
-	background: #00b4dc;
-}
+
 #nav-tab li a{
 	height: 43px;
 	display: block;
@@ -138,6 +133,23 @@ body{
 	line-height: 43px;
 	color: #333333;
 }
+
+#nav-tab li a.selected{
+	text-align: center;
+	line-height: 43px;
+	color: #fff;
+	background: #00b4dc;
+}
+
+
+
+
+
+
+
+
+
+
 /***************nav结束*****************/
 #footer{
 	height: 170px;

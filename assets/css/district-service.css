@@ -112,6 +112,9 @@
 #house-rent-info .house-title a{
 	font-size: 18px;
 	color: #676767;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 #house-rent-info .house-type{
 	width: 100%;
@@ -209,6 +212,31 @@
 #house-rent-info .repairs .repairs-details{
 	width: 100%;
 	color: #ccc;
+}
+
+/*分页*/
+#house-rent-info .house-rent-details .am-cf{
+	padding-top: 20px;
+}
+#house-rent-info .house-rent-details .am-pagination{
+	float: right;
+
+}
+#house-rent-info .house-rent-details .am-pagination span{
+	width: 30px;
+	height: 30px;
+	background: #dfdfdf;
+	margin-left: 10px;
+	padding: 0px;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+}
+#house-rent-info .house-rent-details .am-pagination span a{
+	color: #fff;
+}
+#house-rent-info .house-rent-details .am-pagination .am-active{
+	background: #00b4dc;
 }
 
 

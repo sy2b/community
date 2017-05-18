@@ -27,7 +27,7 @@
 
             <div class="publish-form">
                 <form action="power/save_res" method="post">
-                    <input type="hidden" value="<?php echo $this->input->get('id')?>" name="sid">
+                    <input type="hidden" name="suggest_id" value="<?php echo $this -> input -> get('id');?>">
                     <p>
                         <textarea name="content"></textarea>
                     </p>

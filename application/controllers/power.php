@@ -6,16 +6,44 @@ class Power extends CI_Controller {
     {
         $loginedUser = $this -> session -> userdata('loginedUser');
         $this -> load -> model('property_model');
+        $this -> load -> model('suggest_model');
+
+        //分页
+        $offset = $this -> uri -> segment(3);
+        if($offset == ''){
+            $offset = 0;
+        }
+        $this->load->library('pagination');
+        $config['base_url'] = 'power/index';
+
+        $config['total_rows'] = $this -> suggest_model -> get_suggests_count();
+
+        $config['per_page'] = 4;
+        $config['uri_segment'] = 3;
+
+        $config['prev_link'] = '&lt;&lt;';
+        $config['prev_tag_open'] = '<span>';
+        $config['prev_tag_close'] = '</span>';
+        $config['next_link'] = '&gt;&gt;';
+        $config['next_tag_open'] = '<span>';
+        $config['next_tag_close'] = '</span>';
+        $config['cur_tag_open'] = '<span class="am-active"><a href="'. $config['base_url'] .'">';
+        $config['cur_tag_close'] = '</a></span>';
+        $config['num_tag_open'] = '<span>';
+        $config['num_tag_close'] = '</span>';
+        $this -> pagination -> initialize($config);
+
         $rules = $this -> property_model -> get_rule_all();
         $activities = $this -> property_model -> get_activities_all();
         $announces = $this -> property_model -> get_announce_all();
-        $suggests = $this -> property_model ->get_suggest_all();
+        $suggests = $this -> suggest_model ->get_suggests_all_by_page($offset, $config['per_page']);
 
         $this->load->view('power_ann',array(
             'rules' => $rules,
             'activities' => $activities,
             'announces' => $announces,
-            'suggests' => $suggests
+            'suggests' => $suggests,
+            'total_rows' => $config['total_rows']
         ));
     }
     public function  delete_rule(){
@@ -94,15 +122,23 @@ class Power extends CI_Controller {
     public function res_suggest(){
         $this -> load -> view('res_suggest');
     }
-    public function  save_res(){
-        $suggest_id = $this -> input -> post('sid');
-        $resname = $this -> session -> userdata('loginedUser')->name;
-        $content = $this -> input -> post('content');
-        $state = 1;
+
+
+    //对建议回复
+    public function save_res(){
+        $loginedUser = $this -> session -> userdata('loginedUser');
+        $suggest_id = $this -> input -> post('suggest_id');
+        $res_content = $this -> input -> post('content');
+        $this -> load -> model('response_model');
         $this -> load -> model('suggest_model');
-        $row1 = $this -> suggest_model -> save_response($suggest_id,$resname,$content);
-        $row2 = $this -> suggest_model -> update_state($suggest_id,$state);
-        redirect('power/index');
+        $row = $this -> response_model -> save_res($loginedUser -> name,$suggest_id,$res_content);
+        if($row > 0){
+            $state = 1;
+            $result = $this -> suggest_model -> update_state($suggest_id,$state);
+            if($result > 0){
+                redirect('property/index');
+            }
+        }
 
     }
 

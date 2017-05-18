@@ -91,7 +91,6 @@
 }
 
 #property-content .property-details ul .noreq{
-	background: #00b4dc;
 	line-height: 30px;
 	height: 30px;
 	width: 90px;
@@ -102,6 +101,14 @@
 	display: block;
 	color: #ffffff;
 }
+#property-content .property-details ul .res-no{
+	background: #00b4dc;
+}
+#property-content .property-details ul .res-yes{
+	background: #b1cb3d;
+}
+
+
 #property-content .property-details ul .req{
 	background: #b1cb3d;
 	line-height: 30px;
@@ -138,6 +145,9 @@
 	color: #999;
 	font-size: 14px;
 	margin: 10px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 #property-content .time{
 	font-size: 14px;
@@ -150,7 +160,30 @@
 }
 
 
+/*分页*/
+#property-content .property-details .am-cf{
+	padding-top: 20px;
+}
+#property-content .property-details .am-pagination{
+	float: right;
 
+}
+#property-content .property-details .am-pagination span{
+	width: 30px;
+	height: 30px;
+	background: #dfdfdf;
+	margin-left: 10px;
+	padding: 0px;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+}
+#property-content .property-details .am-pagination span a{
+	color: #fff;
+}
+#property-content .property-details .am-pagination .am-active{
+	background: #00b4dc;
+}
 
 
 

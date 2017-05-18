@@ -34,76 +34,82 @@
     line-height: 40px;
     margin: 10px 0;
 }
-#property-content .property-rule{
+#property-content .property-tabcontrols{
     width: 768px;
-/*    background: #f4f4f4;*/
     float: left;
-    background-image: url("../img/form-bg.jpg");
-    background-size: 100% 100%;
+}
+#property-content .res-details{
+    width: 100%;
+}
+#property-content .res-details li{
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 10px;
+}
 
-}
-#property-content .property-rule legend{
-    font-size: 30px;
-}
-#property-content .property-rule label{
-    margin-left: 50px;
-    font-size: 25px;
-    line-height: 25px;
-}
-#property-content .property-rule .title{
-    margin-top: 50px;
-    margin-bottom: 30px;
+/*查看未回复建议*/
+#property-content .suggest-res-yes{
+    width: 100%;
     height: 30px;
-    font-size: 20px;
-    line-height: 20px;
-    width: 500px;
-    outline: none;
-    text-indent: 10px;
+    line-height: 30px;
 }
-#property-content .property-rule .content{
-    width: 500px;
-    height: 500px;
-    font-size: 20px;
-    line-height: 20px;
-    outline: none;
-    text-indent: 10px;
+#property-content .suggest-res-yes a{
+    font-size: 14px;
+    float: right;
+    color: #00b4dc;
 }
-#property-content .property-rule .push{
-     background: #00b4dc;
-     color: #ffffff;
-     width: 130px;
-     height: 42px;
-     margin-top: 20px;
-     margin-left: 200px;
-     font-size: 25px;
-    border-radius: 10px;
-    float: left;
-    outline: none;
- }
-#property-content .property-rule .reset{
-    background: #00b4dc;
-    color: #ffffff;
-    width: 100px;
-    height: 42px;
+/*查看未回复建议*/
+
+
+
+#property-content .content{
+    width: 100%;
+    color: #999;
+    font-size: 14px;
+    margin: 10px 0;
+}
+#property-content .time{
+    font-size: 14px;
+    color: #999;
     margin-top: 20px;
-    margin-left: 100px;
-    font-size: 25px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    display: block;
-    float: left;
-    outline: none;
+}
+#property-content .response{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    line-height: 30px;
+    color: #999;
+}
+#property-content .response span{
+    color: #000;
 }
 
 
+/*分页*/
+#property-content .res-details .am-cf{
+    padding-top: 20px;
+}
+#property-content .res-details .am-pagination{
+    float: right;
 
-
-
-
-
-
-
-
+}
+#property-content .res-details .am-pagination span{
+    width: 30px;
+    height: 30px;
+    background: #dfdfdf;
+    margin-left: 10px;
+    padding: 0px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+}
+#property-content .res-details .am-pagination span a{
+    color: #fff;
+}
+#property-content .res-details .am-pagination .am-active{
+    background: #00b4dc;
+}
 
 
 

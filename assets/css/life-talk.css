@@ -31,8 +31,7 @@
 #house-rent-info .life-talk{
 	width: 768px;
 	float: left;
-	height: 1000px;
-	/*background: #f4f4f4;*/
+	padding-bottom: 20px;
 	margin-top: 20px;
 }
 #house-rent-info .life-talk h3{
@@ -57,6 +56,34 @@
 	height: 40px;
 	line-height: 40px;
 }
+
+/*分页*/
+#house-rent-info .life-talk .am-cf{
+	height: 50px;
+	padding: 20px 0;
+}
+#house-rent-info .life-talk .am-pagination{
+	float: right;
+}
+#house-rent-info .life-talk .am-pagination li{
+	width: 30px;
+	height: 30px;
+	background: #dfdfdf;
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+	line-height: 30px;
+}
+#house-rent-info .life-talk .am-pagination .am-active{
+	background: #00b4dc;
+}
+#house-rent-info .life-talk .am-pagination li a{
+	color: #fff;
+}
+
+
+
+
 #house-rent-info .life-talk .publish-form{
 	width: 100%;
 	margin-top: 60px;

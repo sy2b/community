@@ -20,7 +20,12 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
-    background: url("../img/login-bg.jpg") no-repeat 0 0;
+    background: url("../img/login-bg.jpg") no-repeat;
+    -webkit-webkit-background-size: cover;
+    -moz-webkit-background-size: cover;
+    -ms-webkit-background-size: cover;
+    -o-webkit-background-size: cover;
+    background-size: cover;
     color: #000;
     font: 14px Arial;
     margin: 0 auto;
@@ -227,6 +232,7 @@ form:after {
     background: linear-gradient(top,  rgba(254,193,81,1) 0%,rgba(254,231,154,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fec151', endColorstr='#fee79a',GradientType=0 );
 }
+
 #content form div a {
     color: #004a80;
     float: right;
@@ -240,5 +246,29 @@ form:after {
     line-height: 20px;
     text-align: left;
     text-indent: 20px;
-    color: #CCCCCC;
+    color: #f00;
+}
+#content .address{
+    width: 360px;
+    height: 67px;
+    line-height: 67px;
+
+}
+#content .address span, #content .address select,#content .address #address_msg{
+    float: left;
+}
+#content .address select{
+    width: 80px;
+    height: 30px;
+    border: 1px solid #aaa;
+    margin-left: 10px;
+    margin-top: 18px;
+}
+#content .address select,#content .address option{
+    outline: none;
+    color: #aaa;
+}
+#content .address span{
+    margin-left: 10px;
+    color: #aaa;
 }

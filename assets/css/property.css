@@ -81,6 +81,18 @@
 	border-bottom: 1px solid #dfdfdf; 
 }
 
+/*查看未回复建议*/
+#property-content .property-details .suggest-res-no{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+}
+#property-content .property-details .suggest-res-no a{
+	font-size: 14px;
+	float: right;
+	color: #00b4dc;
+}
+/*查看未回复建议*/
 
 
 #property-content .property-details ul h3{
@@ -94,17 +106,54 @@
 }
 #property-content .content{
 	width: 100%;
+	height: 20px;
 	color: #999;
 	font-size: 14px;
 	margin: 10px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 #property-content .time{
 	font-size: 14px;
 	color: #999;
 	margin-top: 20px;
 }
+#property-content .response{
+	width: 100%;
+	height: 30px;
+	margin-top: 20px;
+	line-height: 30px;
+	color: #999;
+}
+#property-content .response span{
+	color: #000;
+}
 
-
+/*分页*/
+#property-content .property-details .am-cf{
+	padding-top: 20px;
+}
+#property-content .property-details .am-pagination{
+	float: right;
+	padding-bottom: 20px;
+}
+#property-content .property-details .am-pagination span{
+	width: 30px;
+	height: 30px;
+	background: #dfdfdf;
+	margin-left: 10px;
+	padding: 0px;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+}
+#property-content .property-details .am-pagination span a{
+	color: #fff;
+}
+#property-content .property-details .am-pagination .am-active{
+	background: #00b4dc;
+}
 
 
 

@@ -74,6 +74,13 @@
 	margin-top: 65px;
 
 }
+#house-rent-info .house-figure input{
+	width: 200px;
+	height: 25px;
+	border: 0;
+	text-indent: 0;
+}
+
 
 #house-rent-info .house-intro textarea{
 	width: 300px;

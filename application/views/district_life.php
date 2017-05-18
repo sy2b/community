@@ -24,7 +24,7 @@
                     <img src="assets/img/service/service.png" alt="">
                     <p>贴心服务</p>
                 </a></li>
-            <li><a href="#">
+            <li><a href="welcome/life_talk">
                     <img src="assets/img/service/talk.png" alt="">
                     <p>津津乐道</p>
                 </a></li>
@@ -32,7 +32,7 @@
                     <img src="assets/img/service/help.png" alt="">
                     <p>互助</p>
                 </a></li>
-            <li><a href="#">
+            <li><a href="property/suggest_res_no">
                     <img src="assets/img/service/suggestion.png" alt="">
                     <p>投诉建议</p>
                 </a></li>

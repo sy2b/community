@@ -32,9 +32,8 @@
                 <input id="title" type="text" class="title" placeholder="请在此填写标题" name="title"><br>
                 <label for="content">内容:</label>
                 <textarea id="content" rows="2" cols="100" class="content" placeholder="请在此填写规定内容" name="content"></textarea><br>
-                <input type="submit" value="发布" class="push">
+                <input type="submit" value="发布" class="push" id="rule">
                 <input type="reset" value="重置" class="reset">
-
             </fieldset>
         </form>
         </div>
@@ -49,22 +48,31 @@
             <div class="culture-center">
                 <img src="assets/img/culture.jpg" alt="">
             </div>
-<?php include "district_life.php"?>
+            <?php include "district_life.php"?>
         </div>
     </div>
 </div>
 
-<div id="footer">
-    <p id="footer-link">
-        友情链接:
-        <a href="#">方正集团</a>
-        <a href="#">北大资源</a>
-    </p>
-    <p id="footer-copyright">版权所有：北大资源集团商业有限公司版权所有 Copyright@2013 | 京ICP备13022849号 | 京ICP证130321号 | 京公网安备11010802014221号 | 京卫网审【2014】第0105号</p>
-</div>
+<?php include 'footer.php';?>
 <script src="assets/js/jquery-1.12.4.js"></script>
 <script src="assets/js/header.js"></script>
 <script src="assets/js/district-service.js"></script>
-<script src="assets/js/property.js"></script>
+<script src="assets/js/power.js"></script>
+<script>
+    $(function(){
+        $('#rule').on('submit', function(){
+            $title = $('#title').val();
+            $content = $('#content').val();
+            var bFlag = true;
+            if($title == '' || $content == ''){
+                alert('发布规定不能为空！！！');
+                bFlag = false;
+            }else{
+                bFlag = true;
+            }
+            return bFlag;
+        });
+    });
+</script>
 </body>
 </html>

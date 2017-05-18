@@ -1,8 +1,9 @@
+<?php $loginedUser = $this -> session -> userdata('loginedUser');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>personal</title>
+	<title>生活论坛</title>
 	<base href="<?php echo site_url();?>">
 	<link rel="stylesheet" href="assets/css/common.css">
 	<link rel="stylesheet" href="assets/css/life-talk.css">
@@ -12,9 +13,9 @@
 	<div id="house-rent">
 		<div class="wrapper">
 			<div id="house-rent-nav">
-				<a href="#">首页</a>
+				<a href="welcome/index">首页</a>
 				&nbsp;|&nbsp;
-				<a href="#">生活论坛</a>
+				<a href="welcome/life_talk">生活论坛</a>
 			</div>
 		</div>
 	</div>
@@ -23,19 +24,34 @@
 		<div class="wrapper">
 			<div class="life-talk">
 				<h3>社区互动</h3>
-				<div class="publish-talk">
-					<p class="time">【1楼】李四&nbsp;&nbsp;发表于&nbsp;&nbsp;2017-2-18</p>
-					<p class="content">简称做小区，是指以住宅为主并配套有相应公用设施及非住宅房屋的居住回复我对算法和恶i回复区、花园住宅、住宅组团。据全国最大的小区网络“小区联线”统计，现忽视的回复i撒谎的覅黄飞鸿的犯规而全国总计有超过3万个小区，其中仅北京市就有三千多个小区。</p>
+				<?php
+					foreach($talks as $index => $talk){
+				?>
+						<div class="publish-talk">
+							<p class="time">【<?php echo $index + 1?>楼】<?php echo $talk -> name;?>&nbsp;&nbsp;发表于&nbsp;&nbsp;<?php echo $talk -> date;?></p>
+							<p class="content"><?php echo $talk -> talk_content;?></p>
+						</div>
+				<?php
+					}
+				?>
+
+				<!--分页-->
+				<div class="am-cf">
+					共<?php echo $total_rows;?>条记录
+					<div class="am-fr">
+						<ul class="am-pagination">
+							<?php echo $this->pagination->create_links();?>
+						</ul>
+					</div>
 				</div>
-				<div class="publish-talk">
-					<p class="time">【2楼】张三&nbsp;&nbsp;发表于&nbsp;&nbsp;2017-2-18</p>
-					<p class="content">简称做小区，是指以住宅为主并配套有相应公用设施及非住宅房屋的居住回复我对算法和恶i回复区、花园住宅、住宅组团。据全国最大的小区网络“小区联线”统计，现忽视的回复i撒谎的覅黄飞鸿的犯规而全国总计有超过3万个小区，其中仅北京市就有三千多个小区。</p>
-				</div>
+				<!--分页-->
+
 
 				<div class="publish-form">
-					<form action="">
+					<form action="welcome/add_talk" method="post" id="form-submit">
+						<input type="hidden" name="hid" value="<?php echo $loginedUser ? $loginedUser->user_id : ''?>">
 						<p>
-							<textarea name=""></textarea>
+							<textarea name="talk_content"></textarea>
 						</p>
 						<p>
 							<input type="submit" class="submit" value="发表">
@@ -52,17 +68,33 @@
 			</div>
 		</div>
 	</div>
-
-	<div id="footer">
-		<p id="footer-link">
-			友情链接:
-			<a href="#">方正集团</a>
-			<a href="#">北大资源</a>
-		</p>
-		<p id="footer-copyright">版权所有：北大资源集团商业有限公司版权所有 Copyright@2013 | 京ICP备13022849号 | 京ICP证130321号 | 京公网安备11010802014221号 | 京卫网审【2014】第0105号</p>
-	</div>
+	<?php include 'footer.php';?>
+	<?php include 'dialog.php';?>
 	<script src="assets/js/jquery-1.12.4.js"></script>
 	<script src="assets/js/header.js"></script>
 	<script src="assets/js/district-service.js"></script>
+    <script>
+		$(function(){
+			$('#form-submit').on('submit', function(){
+				$user = $('[name="hid"]').val();
+				$content = $('[name="talk_content"]').val();
+				var bFlag = true;
+				if($user == ''){
+					alert('用户请登录！！！');
+					bFlag = false;
+					$('#modal').show();
+				}else{
+					$('#modal').hide();
+					if($content == ''){
+						alert('发布信息不允许为空！！！');
+						bFlag = false;
+					}else{
+						bFlag = true;
+					}
+				}
+				return bFlag;
+			});
+		});
+	</script>
 </body>
 </html>
